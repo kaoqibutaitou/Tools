@@ -5,7 +5,7 @@ import java.io.*;
 /**
  * Created by Yun on 2016/12/22.
  */
-public class CountProjectLine {
+public class CountProjectLineApp {
     private String projectDirectoryPathString;
     private String [] fileSuffixs;
     private Count count;
@@ -17,7 +17,7 @@ public class CountProjectLine {
         }
     };
 
-    public CountProjectLine(String [] args, Count count) {
+    public CountProjectLineApp(String [] args, Count count) {
         if (args.length>=1){
             projectDirectoryPathString = args[0];
         }else{
@@ -84,7 +84,7 @@ public class CountProjectLine {
 
 
     public static void main(String[] args) {
-        System.out.println(new CountProjectLine(new String[]{
+        System.out.println(new CountProjectLineApp(new String[]{
                 "K:\\Lab\\CountLine\\test.txt"
         },new CountLine(new FilterMultiLineComment())).run());
     }

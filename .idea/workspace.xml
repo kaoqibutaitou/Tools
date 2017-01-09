@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06953203-8434-48fd-8b99-c4725ba18c42" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/markdown-navigator/profiles_settings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTime.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/impl/IAppImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/inter/IApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Tools.iml" afterPath="$PROJECT_DIR$/Tools.iml" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java" />
     </list>
     <ignored path="Tools.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,8 +51,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ListMovieFileTime.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTime.java">
+      <file leaf-file-name="ListMovieFileTimeApp.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTimeApp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2318">
               <caret line="135" column="20" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="20" />
@@ -87,17 +81,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CountProjectLine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java">
+      <file leaf-file-name="CountProjectLineApp.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
+            <state relative-caret-position="1482">
+              <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReadMe.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReadMe.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ReadMe.md">
           <provider editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
@@ -155,12 +149,12 @@
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListFileTypes.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/DeleteDirectoryApp.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListFileTypesApp.java" />
-        <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTime.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/IApp.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/inter/IApp.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/inter/IAppImpl.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/impl/IAppImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java" />
       </list>
     </option>
   </component>
@@ -754,6 +748,19 @@
       <listeners />
       <method />
     </configuration>
+    <configuration default="true" type="executeSpecs" factoryName="Gauge Execution">
+      <setting name="environment" value="" />
+      <setting name="specsToExecute" value="" />
+      <setting name="tags" value="" />
+      <setting name="parallelNodes" value="" />
+      <setting name="execInParallel" value="false" />
+      <setting name="programParameters" value="" />
+      <setting name="workingDirectory" value="" />
+      <setting name="moduleName" value="" />
+      <envMap />
+      <setting name="rowsRange" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -801,7 +808,7 @@
       <updated>1483863600850</updated>
       <workItem from="1483863603609" duration="2883000" />
       <workItem from="1483925705503" duration="6702000" />
-      <workItem from="1483932904678" duration="78000" />
+      <workItem from="1483932904678" duration="175000" />
     </task>
     <task id="LOCAL-00001" summary="添加了ListFileTypesApp">
       <created>1483930427269</created>
@@ -817,15 +824,22 @@
       <option name="project" value="LOCAL" />
       <updated>1483931596902</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="添加了CountProjectLine和ListMovieFileTime">
+      <created>1483933025232</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1483933025232</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9663000" />
+    <option name="totallyTimeSpent" value="9760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -838,7 +852,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18072917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18072917" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -868,7 +882,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="添加了ListFileTypesApp" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加了ListFileTypesApp" />
+    <MESSAGE value="添加了CountProjectLine和ListMovieFileTime" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加了CountProjectLine和ListMovieFileTime" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -901,7 +916,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTime.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTimeApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2318">
           <caret line="135" column="20" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="20" />
@@ -925,7 +940,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
           <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
@@ -1007,14 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="23" column="38" selection-start-line="23" selection-start-column="38" selection-end-line="23" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListFileTypesApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -1036,7 +1043,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTime.java">
+    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTimeApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2318">
           <caret line="135" column="20" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="20" />
@@ -1083,6 +1090,14 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1482">
+          <caret line="83" column="0" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
