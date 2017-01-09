@@ -7,10 +7,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library" exported="">
+    <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/Libary/jave/jave-1.0.2.jar!/" />
+          <root url="jar://D:/Library/Java/jave/jave-1.0.2/jave-1.0.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
