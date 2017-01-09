@@ -3,12 +3,12 @@ package com.kaoqibutaitou.bit.tools;
 import java.io.*;
 
 /**
- * É¾³ıÖ¸¶¨Ä¿Â¼ÏÂµÄ¿ÕµÄÄ¿Â¼»òÕß²»°üº¬Ö¸¶¨ÎÄ¼şÀàĞÍµÄÄ¿Â¼
+ * åˆ é™¤æŒ‡å®šç›®å½•ä¸‹çš„ç©ºçš„ç›®å½•æˆ–è€…ä¸åŒ…å«æŒ‡å®šæ–‡ä»¶ç±»å‹çš„ç›®å½•
  * @author Yun
  * @version 1.0.
  */
 public class DeleteDirectoryApp {
-    public static class DeleteDirectoryFileFilter implements FileFilter{
+    private static class DeleteDirectoryFileFilter implements FileFilter{
         private String [] fileTypes;
 
         public DeleteDirectoryFileFilter(String fileTypeString) {
