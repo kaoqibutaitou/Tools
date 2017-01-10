@@ -1,14 +1,17 @@
 package com.kaoqibutaitou.bit.tools;
 
+import com.kaoqibutaitou.bit.tools.impl.IAppImpl;
+import com.kaoqibutaitou.bit.tools.inter.IApp;
+
 import java.io.*;
 
 /**
  * Created by Yun on 2016/12/22.
  */
-public class CountProjectLineApp {
+public class CountProjectLineApp extends IAppImpl<Long> {
     private String projectDirectoryPathString;
     private String [] fileSuffixs;
-    private Count count;
+    private ICountLine count;
     private long lineNo;
     private FileFilter fileFilter = new FileFilter() {
         @Override
@@ -17,16 +20,13 @@ public class CountProjectLineApp {
         }
     };
 
-    public CountProjectLineApp(String [] args, Count count) {
-        if (args.length>=1){
-            projectDirectoryPathString = args[0];
-        }else{
-            projectDirectoryPathString = "";
-        }
+    public CountProjectLineApp(String[] args) {
+        this(args,new CountLine(new FilterMultiLineComment()));
+    }
 
-        if (args.length>=2){
-            this.fileSuffixs = args[1].toLowerCase().split(",");
-        }
+    public CountProjectLineApp(String [] args, ICountLine count) {
+        super(args);
+        this.result = new Long(0);
         this.lineNo = 1;
         this.count = count;
     }
@@ -48,12 +48,14 @@ public class CountProjectLineApp {
                     cnt += c;
                 }
             } catch (IOException e) {
+                this.state = AppState.RuntimeError.setStateInfo("Fail to Open File:"+file.getAbsolutePath());
                 e.printStackTrace();
             } finally {
                 if (null != br) {
                     try {
                         br.close();
                     } catch (IOException e) {
+                        this.state = AppState.RuntimeError.setStateInfo("Fail to Close File:"+file.getAbsolutePath());
                         e.printStackTrace();
                     }
                 }
@@ -77,30 +79,65 @@ public class CountProjectLineApp {
         return false;
     }
 
-    public long run(){
-        File file = new File(projectDirectoryPathString);
-        return count(file);
+    @Override
+    public boolean initParams(String[] args) {
+        if (args.length>=1){
+            projectDirectoryPathString = args[0];
+        }else{
+            projectDirectoryPathString = "";
+        }
+
+        if (args.length>=2){
+            this.fileSuffixs = args[1].toLowerCase().split(",");
+        }
+        return true;
     }
 
+    @Override
+    public AppState run() {
+        File file = new File(projectDirectoryPathString);
+        this.result = count(file);
+        return this.state;
+    }
+
+    @Override
+    public String getExecuteCmdString() {
+        StringBuilder sb = new StringBuilder(super.getExecuteCmdString());
+        sb.append(" [directoryPath | filePath] [fileType]\n")
+          .append("\t- ").append("directoryPath | filePath : The directory to search or file for counting the total line.\n")
+          .append("\t- ").append("fileType : The file type to filter.\n")
+          .append("\t").append(this.getClass().getName()).append(" is used to count the total number of lines for a project or a file.");
+        return sb.toString();
+    }
 
     public static void main(String[] args) {
-        System.out.println(new CountProjectLineApp(new String[]{
-                "K:\\Lab\\CountLine\\test.txt"
-        },new CountLine(new FilterMultiLineComment())).run());
+        IApp<Long> app = new CountProjectLineApp(new String[]{
+
+        });
+        if(app.getState() != IApp.AppState.NoError) return;
+        if(app.run() == IApp.AppState.NoError){
+            if(null != app.getResult()) {
+                System.out.println("\n\nResult:" + app.getResult());
+            }else{
+                app.display();
+            }
+        }else{
+            System.out.println("Error:"+app.getState().getStateInfo());
+        }
     }
 
 
     /**
      * 计数接口
      */
-    public interface Count{
+    public interface ICountLine {
         long count(String str);
     }
 
     /**
      * 统计行数
      */
-    public static class CountLine implements Count{
+    public static class CountLine implements ICountLine {
         private FilterComment filterComment;
 
         public CountLine(FilterComment filterComment) {

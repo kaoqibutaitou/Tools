@@ -11,12 +11,10 @@ public interface IApp<Result> {
     Result getResult();
     void display();
     String getExecuteCmdString();
-
     enum AppState{
         InitParamError(-1,"Init Param failed!"),
         NoError(0,"No Error"),
-        UnRun(1,"Don't invoke the run method!"),
-        RuntimeError(2);
+        RuntimeError(1);
 
         AppState(int stateCode) {
             this.stateCode = stateCode;
@@ -34,8 +32,9 @@ public interface IApp<Result> {
             return stateInfo;
         }
 
-        public void setStateInfo(String stateInfo) {
+        public AppState setStateInfo(String stateInfo) {
             this.stateInfo = stateInfo;
+            return this;
         }
     }
 }

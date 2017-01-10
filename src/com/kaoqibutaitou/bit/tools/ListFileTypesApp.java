@@ -1,5 +1,8 @@
 package com.kaoqibutaitou.bit.tools;
 
+import com.kaoqibutaitou.bit.tools.impl.IAppImpl;
+import com.kaoqibutaitou.bit.tools.inter.IApp;
+
 import java.io.File;
 import java.io.StringReader;
 import java.util.*;
@@ -11,13 +14,14 @@ import java.util.regex.Pattern;
  * @author Yun
  * @version 1.0.
  */
-public class ListFileTypesApp {
+public class ListFileTypesApp extends IAppImpl<String> {
     private String rootPath;
     private Map<String,List<String>> typeFileList;
     private Pattern pattern;
 
-    public ListFileTypesApp(String rootPath) {
-        this.rootPath = rootPath;
+    public ListFileTypesApp(String [] args) {
+        super(args);
+        this.result = null;
         this.typeFileList = new HashMap<>();
         this.pattern = Pattern.compile(".+\\.(\\w*)");
     }
@@ -46,9 +50,45 @@ public class ListFileTypesApp {
         }
     }
 
-    public void run(){
+    @Override
+    public boolean initParams(String[] args) {
+        if (args.length>=1){
+            this.rootPath = args[0];
+        }else{
+            this.state = AppState.InitParamError.setStateInfo("Root path have not been specificed!");
+            help();
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public AppState run() {
         File file = new File(rootPath);
         search(file);
+        return super.run();
+    }
+
+    @Override
+    public String getResult() {
+        if(null != result) return result;
+
+        StringBuilder sb = new StringBuilder();
+        Set<String> keys = getFileTypes();
+        for (String k:keys) {
+            sb.append(k).append(",");
+        }
+        this.result = sb.toString();
+        return super.getResult();
+    }
+
+    @Override
+    public String getExecuteCmdString() {
+        StringBuilder sb = new StringBuilder(super.getExecuteCmdString());
+        sb.append(" root path\n")
+          .append("\t- root path: Directory to search!\n")
+          .append("\t").append(super.getExecuteCmdString()).append(" is a tool to List the all file types in the specific path!");
+        return sb.toString();
     }
 
     public Set<String> getFileTypes(){
@@ -74,12 +114,7 @@ public class ListFileTypesApp {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        Set<Map.Entry<String, List<String>>> kvs = typeFileList.entrySet();
-        for (Map.Entry<String, List<String>> kv:kvs) {
-            sb.append(kv.getKey()).append(",");
-        }
-        return sb.toString();
+        return getResult();
     }
 
     public static void testReg(){
@@ -99,10 +134,19 @@ public class ListFileTypesApp {
     }
 
     public static void main(String[] args) {
-        ListFileTypesApp app = new ListFileTypesApp("C:\\newRes\\UE4中文打包合集(淘宝店：骄阳教育)");
-        app.run();
-        app.display();
-        System.out.println(app);
+        IApp<String> app = new ListFileTypesApp(new String[]{
+                "C:\\newRes\\UE4中文打包合集(淘宝店：骄阳教育)"
+        });
+        if(app.getState() != IApp.AppState.NoError) return;
+        if(app.run() == IApp.AppState.NoError){
+            if(null != app.getResult()) {
+                System.out.println("\n\nResult:" + app.getResult());
+            }else{
+                app.display();
+            }
+        }else{
+            System.out.println("Error:"+app.getState().getStateInfo());
+        }
     }
 }
 
