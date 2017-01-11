@@ -71,7 +71,11 @@ public class ListFileTypesApp extends IAppImpl<String> {
 
     @Override
     public String getResult() {
-        if(null != result) return result;
+
+        if(null != this.result && !this.result.isEmpty()){
+//            System.out.println("###################"+this.result.getClass().getCanonicalName());
+            return this.result;
+        }
 
         StringBuilder sb = new StringBuilder();
         Set<String> keys = getFileTypes();
@@ -100,6 +104,7 @@ public class ListFileTypesApp extends IAppImpl<String> {
     }
 
     public void display(){
+//        System.out.println(getResult());
         Set<Map.Entry<String, List<String>>> kvs = typeFileList.entrySet();
         for (Map.Entry<String, List<String>> kv:kvs) {
             String k = kv.getKey();

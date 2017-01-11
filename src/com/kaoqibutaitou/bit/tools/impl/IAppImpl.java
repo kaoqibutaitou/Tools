@@ -8,7 +8,7 @@ import com.sun.corba.se.spi.orbutil.fsm.Guard;
  */
 public abstract class IAppImpl<Result> implements IApp<Result>{
     protected volatile AppState state;
-    protected volatile Result result;
+    protected Result result;
     public IAppImpl(String [] args) {
         super();
         this.state = AppState.NoError;
@@ -57,6 +57,6 @@ public abstract class IAppImpl<Result> implements IApp<Result>{
 
     @Override
     public String getExecuteCmdString() {
-        return getClass().getName();
+        return "usage : "+getClass().getName();
     }
 }
