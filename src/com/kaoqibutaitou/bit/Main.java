@@ -36,6 +36,12 @@ public class Main extends IAppImpl<Void> {
             System.out.println("Error : " + app.getState().getStateInfo());
             app.help();
         };
+        testGetPackage();
+
+    }
+
+    public static void testGetPackage(){
+        System.out.println(Main.class.getClass().getPackage().getName());
     }
 
     public static void testCreateApp(String [] args){
