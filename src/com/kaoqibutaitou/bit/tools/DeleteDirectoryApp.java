@@ -7,15 +7,16 @@ import java.io.*;
 
 /**
  * 删除指定目录下的空的目录或者不包含指定文件类型的目录
- *
- * @author Yun
- * @version 1.0.
  */
 public class DeleteDirectoryApp extends IAppImpl<Long> {
     private String rootPath;
     private FileFilter fileFilter;
     private long deleteCnt;
     private BufferedReader br;
+
+    public DeleteDirectoryApp() {
+        super();
+    }
 
     public DeleteDirectoryApp(String[] args) {
         super(args);
@@ -45,8 +46,14 @@ public class DeleteDirectoryApp extends IAppImpl<Long> {
         StringBuilder sb = new StringBuilder(super.getExecuteCmdString());
         sb.append(" rootPath fileType\n")
           .append("\t- rootPath: Directory to search!\n")
-          .append("\t- fileType: The Specific file type")
-          .append("\t").append(super.getExecuteCmdString()).append(" is a tool to Delete the directories that don't contain the specific file types in the specific directory!");
+          .append("\t- fileType: The Specific file type\n");
+        return sb.toString();
+    }
+
+    @Override
+    public String getIntroduce() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(getClass().getSimpleName()).append(" is a tool to Delete the directories that don't contain the specific file types in the specific directory!");
         return sb.toString();
     }
 
@@ -122,7 +129,7 @@ public class DeleteDirectoryApp extends IAppImpl<Long> {
     public static void main(String[] args) {
         String rootPathString="J:\\deleteFile";
         String fileTypesString="avi,mov,flv,mkv,mp4";
-        IApp<Long> app = new CountProjectLineApp(new String[]{rootPathString,fileTypesString});
+        IApp app = new CountProjectLineApp(new String[]{rootPathString,fileTypesString});
         if(app.getState() != IApp.AppState.NoError) return;
         if(app.run() == IApp.AppState.NoError){
             if(null != app.getResult()) {

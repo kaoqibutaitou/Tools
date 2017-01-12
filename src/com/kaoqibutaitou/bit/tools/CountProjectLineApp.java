@@ -6,7 +6,7 @@ import com.kaoqibutaitou.bit.tools.inter.IApp;
 import java.io.*;
 
 /**
- * Created by Yun on 2016/12/22.
+ * 用于统计项目的代码行数。
  */
 public class CountProjectLineApp extends IAppImpl<Long> {
     private String projectDirectoryPathString;
@@ -19,6 +19,13 @@ public class CountProjectLineApp extends IAppImpl<Long> {
             return isNeedFile(pathname);
         }
     };
+
+    public CountProjectLineApp() {
+        super();
+        this.result = new Long(0);
+        this.lineNo = 1;
+        this.count = new CountLine(new FilterMultiLineComment());
+    }
 
     public CountProjectLineApp(String[] args) {
         this(args,new CountLine(new FilterMultiLineComment()));
@@ -105,13 +112,20 @@ public class CountProjectLineApp extends IAppImpl<Long> {
         StringBuilder sb = new StringBuilder(super.getExecuteCmdString());
         sb.append(" [directoryPath | filePath] [fileType]\n")
           .append("\t- ").append("directoryPath | filePath : The directory to search or file for counting the total line.\n")
-          .append("\t- ").append("fileType : The file type to filter.\n")
-          .append("\t").append(this.getClass().getName()).append(" is used to count the total number of lines for a project or a file.");
+          .append("\t- ").append("fileType : The file type to filter.\n");
+
+        return sb.toString();
+    }
+
+    @Override
+    public String getIntroduce() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(this.getClass().getSimpleName()).append(" is used to count the total number of lines for a project or a file.");
         return sb.toString();
     }
 
     public static void main(String[] args) {
-        IApp<Long> app = new CountProjectLineApp(new String[]{
+        IApp app = new CountProjectLineApp(new String[]{
 
         });
         if(app.getState() != IApp.AppState.NoError) return;

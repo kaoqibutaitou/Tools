@@ -1,17 +1,21 @@
 package com.kaoqibutaitou.bit.tools.impl;
 
 import com.kaoqibutaitou.bit.tools.inter.IApp;
-import com.sun.corba.se.spi.orbutil.fsm.Guard;
 
 /**
  * Created by Yun on 2017/1/9.
  */
-public abstract class IAppImpl<Result> implements IApp<Result>{
+public abstract class IAppImpl<Result> implements IApp{
     protected volatile AppState state;
-    protected Result result;
-    public IAppImpl(String [] args) {
-        super();
+    protected volatile Result result;
+
+    public IAppImpl() {
         this.state = AppState.NoError;
+        this.result = null;
+    }
+
+    public IAppImpl(String [] args) {
+        this();
         if(!initParams(args)) {
             state = AppState.InitParamError;
             help();
@@ -30,7 +34,7 @@ public abstract class IAppImpl<Result> implements IApp<Result>{
 
     @Override
     public Result getResult() {
-        if(AppState.NoError != state) {
+        if(AppState.NoError != this.state) {
             return result;
         }else{
             return null;
@@ -39,11 +43,13 @@ public abstract class IAppImpl<Result> implements IApp<Result>{
 
     @Override
     public void display() {
-        Result result = getResult();
-        if(null == result){
+        Result r = getResult();
+        if(state != AppState.NoError){
             System.out.println("Error: "+state.getStateInfo());
         }else{
-            System.out.println("Result: "+result);
+            if(null != r) {
+                System.out.println("Result: " + result);
+            }
         }
     }
 
@@ -52,11 +58,11 @@ public abstract class IAppImpl<Result> implements IApp<Result>{
         if(state!=AppState.NoError){
             System.out.println("Error:" + state.getStateInfo());
         }
-        System.out.println(getExecuteCmdString());
+        System.out.println(getExecuteCmdString() + "\t" + getIntroduce() + "\n");
     }
 
     @Override
     public String getExecuteCmdString() {
-        return "usage : "+getClass().getName();
+        return "usage : java -jar Tools.jar "+getClass().getSimpleName();
     }
 }
