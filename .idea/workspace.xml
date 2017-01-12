@@ -7,15 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06953203-8434-48fd-8b99-c4725ba18c42" name="Default" comment="发现了Java反射中创建对象实例的时候会自动填充属性，最坑的地方在于明确在构造函数里面赋值为null的字段也会被填充一个值，比较明显的就是String类型的字段会被指定为空字符串，为此，不能通过类字段是否为空来判断对象的属性。">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/Main.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/DeleteDirectoryApp.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/DeleteDirectoryApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListFileTypesApp.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListFileTypesApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTimeApp.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTimeApp.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/impl/IAppImpl.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/impl/IAppImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/inter/IApp.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/inter/IApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java" afterPath="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java" />
     </list>
     <ignored path="Tools.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="750">
-              <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
+            <state relative-caret-position="-2311">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#615#616#0" expanded="true" />
@@ -125,11 +118,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="man.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="man.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+            <state relative-caret-position="940">
+              <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#934#935#0" expanded="true" />
@@ -186,10 +179,10 @@
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/CountProjectLineApp.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/DeleteDirectoryApp.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListFileTypesApp.java" />
-        <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/ListMovieFileTimeApp.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/impl/IAppImpl.java" />
         <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java" />
       </list>
     </option>
   </component>
@@ -243,6 +236,94 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Tools" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="production" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="production" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kaoqibutaitou" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Tools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="out" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="artifacts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dailyTools" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
@@ -764,7 +845,7 @@
       <workItem from="1483932904678" duration="175000" />
       <workItem from="1483954016832" duration="1195000" />
       <workItem from="1484010169978" duration="9009000" />
-      <workItem from="1484096385973" duration="26440000" />
+      <workItem from="1484096385973" duration="26836000" />
     </task>
     <task id="LOCAL-00001" summary="添加了ListFileTypesApp">
       <created>1483930427269</created>
@@ -808,11 +889,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484105418242</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="发现了Java反射中创建对象实例的时候会自动填充属性，最坑的地方在于明确在构造函数里面赋值为null的字段也会被填充一个值，比较明显的就是String类型的字段会被指定为空字符串，为此，不能通过类字段是否为空来判断对象的属性。">
+      <created>1484188124415</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1484188124415</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46404000" />
+    <option name="totallyTimeSpent" value="46800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -820,12 +908,12 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3336475" sideWeight="0.38229167" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3336475" sideWeight="0.38072917" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37983036" sideWeight="0.30260417" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3336475" sideWeight="0.61927086" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37983036" sideWeight="0.69739586" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37983036" sideWeight="0.69739586" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -863,7 +951,8 @@
     <MESSAGE value="简单完善了IApp和IAppImpl接口" />
     <MESSAGE value="完善了Main的调用关系。" />
     <MESSAGE value="完善了Main的调用关系，发现了模板中Result的怪异行为，后期需要修改完善。" />
-    <option name="LAST_COMMIT_MESSAGE" value="完善了Main的调用关系，发现了模板中Result的怪异行为，后期需要修改完善。" />
+    <MESSAGE value="发现了Java反射中创建对象实例的时候会自动填充属性，最坑的地方在于明确在构造函数里面赋值为null的字段也会被填充一个值，比较明显的就是String类型的字段会被指定为空字符串，为此，不能通过类字段是否为空来判断对象的属性。" />
+    <option name="LAST_COMMIT_MESSAGE" value="发现了Java反射中创建对象实例的时候会自动填充属性，最坑的地方在于明确在构造函数里面赋值为null的字段也会被填充一个值，比较明显的就是String类型的字段会被指定为空字符串，为此，不能通过类字段是否为空来判断对象的属性。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -929,7 +1018,7 @@
         </line-breakpoint>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java</url>
-          <line>140</line>
+          <line>135</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -1423,10 +1512,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2311">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#615#616#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
+            <element signature="e#5088#5089#0" expanded="true" />
+            <element signature="e#5154#5155#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/tools/man.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="138" column="13" selection-start-line="138" selection-start-column="13" selection-end-line="138" selection-end-column="13" />
+        <state relative-caret-position="940">
+          <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#934#935#0" expanded="true" />
@@ -1435,20 +1538,6 @@
             <element signature="e#1948#1949#0" expanded="true" />
             <element signature="e#2689#2981#0" expanded="true" />
             <element signature="e#2980#2981#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kaoqibutaitou/bit/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="48" column="2" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#642#643#0" expanded="true" />
-            <element signature="e#5088#5089#0" expanded="true" />
-            <element signature="e#5154#5155#0" expanded="true" />
           </folding>
         </state>
       </provider>

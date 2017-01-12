@@ -124,14 +124,9 @@ public class man extends IAppImpl<Void> {
                     }
                 }
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+            this.state = AppState.RuntimeError.setStateInfo(e.getMessage());
         }
         return super.run();
     }
