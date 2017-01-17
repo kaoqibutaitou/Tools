@@ -192,9 +192,10 @@ public class ListMovieFileTimeApp extends IAppImpl<Void> {
 
 
     public static void main(String[] args) {
-        String filePath = "C:\\newRes\\UE4中文打包合集(淘宝店：骄阳教育)";
+        String filePath = "J:\\deleteFile";
+        String fileTypes = "txt"; //"avi,flv,avi,mp4,mkv"
         IApp app = new ListMovieFileTimeApp(new String[]{
-                filePath,"avi,flv,avi,mp4,mkv"
+                filePath,fileTypes
         });
         if(app.getState() != IApp.AppState.NoError) return;
         if(app.run() == IApp.AppState.NoError){

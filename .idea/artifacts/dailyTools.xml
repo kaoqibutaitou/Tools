@@ -3,8 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/dailyTools</output-path>
     <root id="archive" name="Tools.jar">
       <element id="module-output" name="Tools" />
-      <element id="extracted-dir" path="E:/Libary/jave/jave-1.0.2.jar" path-in-jar="/" />
-      <element id="library" level="application" name="Jave" />
+      <element id="file-copy" path="D:/Library/Java/jave/jave-1.0.2/jave-1.0.2.jar" />
     </root>
   </artifact>
 </component>

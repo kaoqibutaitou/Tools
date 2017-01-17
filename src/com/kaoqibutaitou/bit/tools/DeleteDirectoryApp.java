@@ -4,6 +4,8 @@ import com.kaoqibutaitou.bit.tools.impl.IAppImpl;
 import com.kaoqibutaitou.bit.tools.inter.IApp;
 
 import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 删除指定目录下的空的目录或者不包含指定文件类型的目录
@@ -57,6 +59,20 @@ public class DeleteDirectoryApp extends IAppImpl<Long> {
         return sb.toString();
     }
 
+    private boolean deleteDirectory(File directory){
+        if(directory.isFile()){
+            return directory.delete();
+        }else{
+            boolean ret = true;
+            File [] subFiles = directory.listFiles();
+            for (File file:subFiles) {
+                ret &= deleteDirectory(file);
+            }
+            ret &= directory.delete();
+            return ret;
+        }
+    }
+
     @Override
     public AppState run() {
         File file = new File(rootPath);
@@ -65,13 +81,23 @@ public class DeleteDirectoryApp extends IAppImpl<Long> {
             File[] subDirectories = file.listFiles();
             try {
                 br = new BufferedReader(new InputStreamReader(System.in));
+                DirectoryInfo directoryInfo = new DirectoryInfo();
                 for (File d : subDirectories) {
                     if (d.isDirectory()) {
                         if (!isNeedDirectory(d)) {
+                            directoryInfo.setRootPath(d.getAbsolutePath());
+                            directoryInfo.subFiles.clear();
+
+                            searchFiles(d,directoryInfo);
+
+                            System.out.println();
+                            System.out.println(directoryInfo);
+
                             System.out.println("[" + (++deleteCnt) + "] delete Directory:" + d.getAbsoluteFile() + "? (y/n)");
+
                             c = br.readLine().charAt(0);
                             if (c == 'y' || c == 'Y') {
-                                if(d.delete()){
+                                if(deleteDirectory(d)){
                                     ++this.result;
                                 }
                             }
@@ -112,24 +138,72 @@ public class DeleteDirectoryApp extends IAppImpl<Long> {
         }
     }
 
+    private static class DirectoryInfo{
+        private String rootPath;
+        private List<String> subFiles;
+
+        public DirectoryInfo() {
+            this.subFiles = new ArrayList<>();
+        }
+
+        public void setRootPath(String rootPath) {
+            this.rootPath = rootPath;
+        }
+
+        public String getRootPath() {
+            return rootPath;
+        }
+
+        public List<String> getSubFiles() {
+            return subFiles;
+        }
+
+        @Override
+        public String toString() {
+            return "DirectoryInfo{" +
+                    "rootPath='" + rootPath + '\'' +
+                    ", subFiles=" + subFiles +
+                    '}';
+        }
+    }
+
+    public void searchFiles(File directory, DirectoryInfo directoryInfo){
+        if(directory.isFile()){
+            directoryInfo.subFiles.add(directory.getAbsolutePath());
+        }else{
+            File[] subFiles = directory.listFiles();
+            for (File f:subFiles){
+                searchFiles(f,directoryInfo);
+            }
+        }
+    }
+
     public boolean isNeedDirectory(File directory) {
-        if (directory.isFile() && fileFilter.accept(directory)) return true;
-        else {
+        if (directory.isFile()){
+            if(fileFilter.accept(directory)) {
+                System.out.println("\tNeedFile:"+directory.getAbsolutePath());
+                return true;
+            }else{
+                return false;
+            }
+        } else {
             File[] subFiles = directory.listFiles(fileFilter);
             if (null == subFiles || subFiles.length <= 0) return false;
             boolean ret = false;
             for (File f : subFiles) {
-                ret &= isNeedDirectory(f);
-                if (ret) break;
+                if(isNeedDirectory(f)) {
+                    ret = true;
+                    break;
+                }
             }
             return ret;
         }
     }
 
     public static void main(String[] args) {
-        String rootPathString="J:\\deleteFile";
-        String fileTypesString="avi,mov,flv,mkv,mp4";
-        IApp app = new CountProjectLineApp(new String[]{rootPathString,fileTypesString});
+        String rootPathString="J:\\Movie";
+        String fileTypesString="avi,mov,flv,mkv,mp4,rmvb";
+        IApp app = new DeleteDirectoryApp(new String[]{rootPathString,fileTypesString});
         if(app.getState() != IApp.AppState.NoError) return;
         if(app.run() == IApp.AppState.NoError){
             if(null != app.getResult()) {

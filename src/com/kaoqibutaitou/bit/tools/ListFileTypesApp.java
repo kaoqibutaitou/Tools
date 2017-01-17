@@ -142,7 +142,7 @@ public class ListFileTypesApp extends IAppImpl<String> {
 
     public static void main(String[] args) {
         IApp app = new ListFileTypesApp(new String[]{
-                "C:\\newRes\\UE4中文打包合集(淘宝店：骄阳教育)"
+                "J:\\Movie"
         });
         if(app.getState() != IApp.AppState.NoError) return;
         if(app.run() == IApp.AppState.NoError){
